@@ -1,0 +1,51 @@
+@startuml
+interface process.SortAPI {
+~ Function<ItemStack[],ItemStack[]> sortProcess
+}
+interface util.local.Local {
+}
+class process.Sort {
+~ Plugin instance
++ void chestSort(BlockDamageEvent)
+}
+class exception.NotCommandException {
+}
+class commands.SortCommand {
+~ Plugin instance
++ boolean onCommand(CommandSender,Command,String,String[])
+}
+enum util.Message {
++  ITEMSORT_M0001_I
++  ITEMSORT_M0002_I
++  ITEMSORT_M0003_I
++  ITEMSORT_M0004_I
++  ITEMSORT_M0005_I
++  ITEMSORT_M0006_I
++  ITEMSORT_M0001_E
++  SORT_M0001_I
++  SORTCOMMAND_M0001_I
++  SORTCOMMAND_M0001_W
+- String MSG_JA
+- {static} Local DEFAULT_LOCAL
++ String getMessage()
++ String getMessage(Local)
+}
+class util.local.Ja {
+}
+class ItemSort {
+- {static} ItemSort pluginInstance
++ void onEnable()
++ void onDisable()
+- void setupCommands()
+- void setupEvents()
+}
+
+
+org.bukkit.event.Listener <|-- process.SortAPI
+process.SortAPI <|.. process.Sort
+exception.RuntimeException <|-- exception.NotCommandException
+org.bukkit.command.CommandExecutor <|.. commands.SortCommand
+process.SortAPI <|.. commands.SortCommand
+util.local.Local <|.. util.local.Ja
+org.bukkit.plugin.java.JavaPlugin <|-- ItemSort
+@enduml
