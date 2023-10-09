@@ -4,8 +4,9 @@ package net.mcnimoses.daisukeearth.process;
 //region インポート宣言
 /*==================================================================*/
 // 外部ライブラリ
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.plugin.Plugin;
-import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.Chest;
@@ -89,7 +90,7 @@ public class Sort implements SortAPI{
         //endregion 主処理
 
         //region 事後処理
-        event.getPlayer().sendMessage(Color.GRAY + Message.SORT_M0001_I.getMessage());
+        event.getPlayer().sendMessage(Component.text(Message.SORT_M0001_I.getMessage(), NamedTextColor.GRAY));
 
         //endregion 事後処理
     }

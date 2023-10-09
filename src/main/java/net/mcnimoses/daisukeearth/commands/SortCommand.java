@@ -5,7 +5,6 @@ package net.mcnimoses.daisukeearth.commands;
 /*==================================================================*/
 // 外部ライブラリ
 import org.bukkit.plugin.Plugin;
-import org.bukkit.Color;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -13,6 +12,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.format.NamedTextColor;
 
 // 自作ライブラリ
 import net.mcnimoses.daisukeearth.util.Message;
@@ -78,7 +79,7 @@ public class SortCommand implements CommandExecutor, SortAPI{
 
 
         // 事後処理
-        player.sendMessage(Color.GRAY + Message.SORTCOMMAND_M0001_I.getMessage());
+        player.sendMessage(Component.text(Message.SORTCOMMAND_M0001_I.getMessage(), NamedTextColor.GRAY));
 
         return true;
     }
