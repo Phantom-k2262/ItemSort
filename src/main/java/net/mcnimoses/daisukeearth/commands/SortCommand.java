@@ -47,7 +47,7 @@ public class SortCommand implements CommandExecutor, SortAPI{
      * @param command Command which was executed
      * @param label Alias of the command which was used
      * @param args Passed command arguments
-     * @return
+     * @return コマンドの成功か否か
      */
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
